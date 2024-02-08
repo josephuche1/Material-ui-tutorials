@@ -43,10 +43,9 @@ const Authentication = () => {
 
       <CommonButton
         variant="contained"
-        sx={buttonStyles}
         color="primary"
       > 
-        Palette(theming)
+        Palette-theming
       </CommonButton>
     </Grid>
   )

@@ -8,9 +8,14 @@ export const dashboardTheme = createTheme({
         // Name of the slot
         root: {
           // Some CSS
-          backgroundColor: 'black !important',
+          // backgroundColor: 'black !important',
         },
       },
     },
   },
-  });
+  palette: {
+    primary: {
+      main: '#00acc1',
+    },
+  },
+});
