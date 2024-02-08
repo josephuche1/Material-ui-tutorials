@@ -8,7 +8,7 @@ export const dashboardTheme = createTheme({
         // Name of the slot
         root: {
           // Some CSS
-          fontSize: '1rem',
+          backgroundColor: 'black !important',
         },
       },
     },

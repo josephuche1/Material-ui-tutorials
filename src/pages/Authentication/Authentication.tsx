@@ -40,6 +40,14 @@ const Authentication = () => {
       > 
         Web Setup
       </CommonButton>
+
+      <CommonButton
+        variant="contained"
+        sx={buttonStyles}
+        color="primary"
+      > 
+        Palette(theming)
+      </CommonButton>
     </Grid>
   )
 }
