@@ -8,7 +8,7 @@ const Authentication = () => {
     fontWeight: 600,
     textTransform: 'capitalize',
     borderRadius: 2.5,
-    '&.MuiButton-contained': {
+    '&.MuiButton-contained': { 
         backgroundColor: '#009be5',
         '&:hover': {
             backgroundColor: '#006db3'
@@ -26,7 +26,7 @@ const Authentication = () => {
 };
 
   return (
-    <Grid xs={8}>
+    <Grid xs={8} sx={{backgroundColor: "cyan"}}>
       this is the authentication page
       <CommonButton
         variant="contained"
