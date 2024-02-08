@@ -1,10 +1,11 @@
 import React from 'react'
 import Grid from '@mui/material/Grid';
-import CommonButton from '../../components/Navbar/common/CommonButton/CommonButton';
+import CommonButton from '../../components/common/CommonButton/CommonButton';
 
 const Authentication = () => {
   const buttonStyles= {
-    fontSize: "1.5rem",
+    fontSize: 20,
+    fontWeight: 200,
     backgroundColor: "tomato",
     "&:hover": {
       backgroundColor: "black",
