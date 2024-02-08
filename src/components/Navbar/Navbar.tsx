@@ -7,12 +7,13 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import { mainNavbarItems } from './consts/navbarItems';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
-    const drawerWidth = 240;
+   const navigate = useNavigate();
+
+  const drawerWidth = 240;
   return (
     <Drawer
     sx={{
@@ -31,17 +32,21 @@ const Navbar: React.FC = () => {
     <Toolbar />
     <Divider />
     <List>
-      {mainNavbarItems.map((text, index) => (
-        <ListItem key={text.id} disablePadding>
+      {mainNavbarItems.map((item, index) => (
+        <ListItem 
+          key={item.id} 
+          disablePadding
+          onClick={() => navigate(item.route)}
+          >
           <ListItemButton>
             <ListItemIcon sx={
               {
                 color: "rgba(255, 255, 255, 0.7)"
               }
             }>
-              {text.icon}
+              {item.icon}
             </ListItemIcon>
-            <ListItemText primary={text.label} />
+            <ListItemText primary={item.label} />
           </ListItemButton>
         </ListItem>
       ))}
