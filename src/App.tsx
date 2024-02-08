@@ -7,7 +7,7 @@ const App: React.FC = () => {
   return (
     <Grid container>
       <Navbar />
-      <Outlet /> // The outlet element is a placeholder for the child route's content.
+      <Outlet />  { /*The outlet element is a placeholder for the child route's content.*/}
     </Grid>
   );
 }
