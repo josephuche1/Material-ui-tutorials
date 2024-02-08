@@ -32,4 +32,6 @@ export const dashboardTheme = createTheme({
       '"Segoe UI Symbol"',
     ].join(','),
   },
+  spacing: [0, 4, 8, 12, 16, 20]
+  // theme.spacing(2)
 });
