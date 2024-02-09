@@ -1,6 +1,7 @@
 import React from 'react'
 import Grid from '@mui/material/Grid';
 import CommonButton from '../../components/common/CommonButton/CommonButton';
+import NotificationBell from '../../components/common/NotificationBell/NotificationBell';
 
 const Authentication = () => {
   const buttonStyles = {
@@ -23,30 +24,12 @@ const Authentication = () => {
             color: "green"
         },
     },
-};
+  };
 
   return (
     <Grid xs={8} sx={{backgroundColor: "cyan"}}>
-      this is the authentication page
-      <CommonButton
-        variant="contained"
-        sx={buttonStyles}
-      > 
-        Add User 
-      </CommonButton>
-      <CommonButton
-        variant="outlined"
-        sx={buttonStyles}
-      > 
-        Web Setup
-      </CommonButton>
-
-      <CommonButton
-        variant="contained"
-        color="primary"
-      > 
-        Palette-theming
-      </CommonButton>
+        This is the Authentication page
+        <NotificationBell badgeContent={5} />
     </Grid>
   )
 }
