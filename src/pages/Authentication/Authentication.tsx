@@ -2,6 +2,7 @@ import React from 'react'
 import Grid from '@mui/material/Grid';
 import CommonButton from '../../components/common/CommonButton/CommonButton';
 import NotificationBell from '../../components/common/NotificationBell/NotificationBell';
+import  BasicMenu from '../../components/common/BasicMenu/BasicMenu';
 
 const Authentication = () => {
   const buttonStyles = {
@@ -30,6 +31,7 @@ const Authentication = () => {
     <Grid xs={8} sx={{backgroundColor: "cyan"}}>
         This is the Authentication page
         <NotificationBell badgeContent={5} />
+        <BasicMenu />
     </Grid>
   )
 }
