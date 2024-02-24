@@ -5,7 +5,9 @@ import Header from '../../components/common/Header/Header'
 const Authentication:React.FC = () => {
   return (
     <Grid xs={8}>
-        <Header />
+        <Header 
+            title="Authentication"
+        />
     </Grid>
   )
 }
