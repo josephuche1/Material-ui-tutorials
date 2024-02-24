@@ -4,10 +4,8 @@ import Header from '../../components/common/Header/Header'
 
 const Authentication:React.FC = () => {
   return (
-    <Grid xs={8}>
-        <Header 
-            title="Authentication"
-        />
+    <Grid item xs={8}>
+ 
     </Grid>
   )
 }

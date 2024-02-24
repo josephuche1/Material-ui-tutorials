@@ -20,7 +20,9 @@ const Header:React.FC<IHeaderProps> = (props) => {
             width: '100%',
             display: 'flex',
             flexDirection:'column',
-            margin: "opx 0px 0px 0px"
+            marginLeft: '230px',
+            marginTop: '-10px',
+            marginRight: '-10px',
         },
         topSection: {
             display: 'flex',
