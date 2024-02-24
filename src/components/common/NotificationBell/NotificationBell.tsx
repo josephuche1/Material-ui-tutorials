@@ -6,7 +6,7 @@ import Tooltip from '@mui/material/Tooltip';
 import BasicMenu from '../BasicMenu/BasicMenu';
 
 interface INotificationBellProps {
-    color?: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning",
+    color?: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning" |  undefined,
     sx?: object,
     badgeContent?: number,
 }
@@ -44,7 +44,9 @@ const NotificationBell: React.FC<INotificationBellProps> = (props) => {
                     badgeContent={notifications.length} 
                     color="error"
                 >
-                    <NotificationsIcon />
+                    <NotificationsIcon 
+                        sx={props.sx}
+                    />
                 </Badge>
             </IconButton>
         </Tooltip>

@@ -15,30 +15,55 @@ interface IHeaderProps {
 
 const Header:React.FC<IHeaderProps> = (props) => {
    const headerStyles = {
-     wrapper: {
-        backgroundColor: '#009be5',
-     }
+        wrapper: {
+            backgroundColor: '#009be5',
+            width: '100%',
+            display: 'flex',
+            flexDirection:'column',
+            margin: "opx 0px 0px 0px"
+        },
+        topSection: {
+            display: 'flex',
+            justifyContent: 'flex-end',
+            padding: '10px',
+            marginBottom: '10px',
+            gap: '5px',
+        },
+        bottomSection: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            padding: '10px',
+        }
    };
   return (
     <Box sx={headerStyles.wrapper}>
-        <CommonButton>
-            Go to Docs
-        </CommonButton>
-        <NotificationBell 
-          color="primary"
-        />
-        <Avatar 
-          src="https://mui.com/static/images/avatar/1.jpg"
-        />
-        <div>
-            <Typography>{props.title}</Typography>
-            <CommonButton variant="outlined">Web Setup</CommonButton>
-            <Tooltip title="Help">
-                <IconButton><QuestionMarkIcon/> </IconButton>
-            </Tooltip>
-        </div>
+        <Box sx={headerStyles.topSection}>
+            <CommonButton
+                sx={{color: 'white'}}
+            >
+                Go to Docs
+            </CommonButton>
+            <NotificationBell 
+                sx={{color: 'white'}}
+            />
+            <Avatar 
+                src="https://mui.com/static/images/avatar/1.jpg"
+            />
+        </Box>
+        <Box sx={headerStyles.bottomSection}>
+            <Typography color="white" variant="h1">{props.title}</Typography>
+            <Box>
+                <CommonButton 
+                    variant="outlined" 
+                    sx={{color: 'white', borderColor: "white"}}>Web Setup</CommonButton>
+                <Tooltip title="Help">
+                    <IconButton sx={{color:"white"}}><QuestionMarkIcon/> </IconButton>
+                </Tooltip>
+            </Box>
+        </Box>
     </Box>
   )
 }
+
 
 export default Header

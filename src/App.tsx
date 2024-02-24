@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import Grid from '@mui/material/Grid';
 
 const App: React.FC = () => {
+
   return (
     <Grid container>
       <Navbar />

@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 
 interface ICommonButtonProps {
     children: React.ReactNode,
-    color?: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning",
+    color?: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning" |  undefined,
     disabled?: boolean,
     variant?: "text" | "outlined" | "contained",
     size?: "small" | "medium" | "large",
