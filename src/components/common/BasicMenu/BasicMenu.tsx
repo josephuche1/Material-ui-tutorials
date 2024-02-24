@@ -5,7 +5,8 @@ import MenuItem from '@mui/material/MenuItem';
 interface IBasicMenuProps {
     anchorEl?: null | HTMLElement,
     open: boolean,
-    handleClose?: () => void
+    handleClose?: () => void,
+    menuItems?: Array<{label: string}>,
 }
 
 const BasicMenu: React.FC<IBasicMenuProps> = (props) => {
@@ -20,9 +21,9 @@ const BasicMenu: React.FC<IBasicMenuProps> = (props) => {
             'aria-labelledby': 'basic-button',
             }}
         >
-            <MenuItem onClick={props.handleClose}>Profile</MenuItem>
-            <MenuItem onClick={props.handleClose}>My account</MenuItem>
-            <MenuItem onClick={props.handleClose}>Logout</MenuItem>
+            {props.menuItems && props.menuItems.map((item, index) => {
+                return <MenuItem key={index} onClick={props.handleClose}>{item.label}</MenuItem>
+            })}
         </Menu>
     </div>
     );

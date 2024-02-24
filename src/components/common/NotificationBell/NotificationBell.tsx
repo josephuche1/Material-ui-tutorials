@@ -12,7 +12,13 @@ interface INotificationBellProps {
 }
 
 const NotificationBell: React.FC<INotificationBellProps> = (props) => {
-  const notifications = `You have ${props.badgeContent} notifications`;
+  const notifications = [
+    {label: "Notification 1"}, 
+    {label: "Notification 2"}, 
+    {label: "Notification 3"}, 
+    {label: "Notification 4"}
+]
+  const notification = `You have ${notifications.length} notifications`;
   const noNotifications = "You have no notifications";
   const handleClose = () => {
     setOpen(false);
@@ -25,15 +31,17 @@ const NotificationBell: React.FC<INotificationBellProps> = (props) => {
   const [open, setOpen] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
+  
+
   return (
     <div>
-        <Tooltip title={props.badgeContent && props.badgeContent !== 0 ? notifications : noNotifications }>
+        <Tooltip title={notifications && notifications.length !== 0 ? notification : noNotifications }>
             <IconButton 
                 color={props.color}
                 onClick={handleOpen}
             >
                 <Badge 
-                    badgeContent={props.badgeContent} 
+                    badgeContent={notifications.length} 
                     color="error"
                 >
                     <NotificationsIcon />
@@ -44,6 +52,7 @@ const NotificationBell: React.FC<INotificationBellProps> = (props) => {
             anchorEl={anchorEl}
             open={open}
             handleClose={handleClose}
+            menuItems={notifications}
         />
     </div>
   )
