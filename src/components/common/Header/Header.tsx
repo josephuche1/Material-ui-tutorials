@@ -22,7 +22,7 @@ const Header:React.FC<IHeaderProps> = (props) => {
             flexDirection:'column',
             marginLeft: '230px',
             marginTop: '-10px',
-            marginRight: '-10px',
+            marginRight: '-8px',
         },
         topSection: {
             display: 'flex',
@@ -30,12 +30,14 @@ const Header:React.FC<IHeaderProps> = (props) => {
             padding: '10px',
             marginBottom: '10px',
             gap: '5px',
+            alignItems: 'center',
         },
         bottomSection: {
             display: 'flex',
             justifyContent: 'space-between',
             padding: '10px',
-        }
+            alignItems: 'center',
+        },
    };
   return (
     <Box sx={headerStyles.wrapper}>
