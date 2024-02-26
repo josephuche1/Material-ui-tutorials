@@ -2,23 +2,36 @@ import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+import CommonButton from '../CommonButton/CommonButton';
 
 interface ISearchBarProps {
     placeholder: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; // TODO: Change any to the type of the event
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    headerStyles?: object;
+    TextFieldStyles: object;
 }
 
 
 const SearchBar: React.FC<ISearchBarProps> = (props) => {
   return (
-    <div>
+    <Box sx={props.headerStyles}>
         <SearchIcon />
         <TextField
                 placeholder={props.placeholder}
                 onChange={props.onChange}
                 variant="standard"
+                sx={props.TextFieldStyles}
             />
-    </div>
+        <CommonButton
+            color="primary"
+            variant="contained"
+            size= "small"
+         > 
+            Add User
+        </CommonButton>
+        <RefreshIcon />
+    </Box>
   )
 }
 

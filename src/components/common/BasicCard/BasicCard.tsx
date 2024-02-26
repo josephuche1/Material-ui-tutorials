@@ -5,11 +5,12 @@ import CardContent from '@mui/material/CardContent';
 
 interface IBasicCardProps {
     header: () => JSX.Element;
+    sx?: object;
 }
 
 const BasicCard: React.FC<IBasicCardProps> = (props) => {
   return (
-    <Card>
+    <Card sx={props.sx}>
         {props.header()}
         <CardContent>
             
