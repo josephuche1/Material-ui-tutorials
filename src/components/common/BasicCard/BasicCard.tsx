@@ -3,11 +3,16 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 
-const BasicCard: React.FC = () => {
+interface IBasicCardProps {
+    header: () => JSX.Element;
+}
+
+const BasicCard: React.FC<IBasicCardProps> = (props) => {
   return (
     <Card>
+        {props.header()}
         <CardContent>
-            Card Content
+            
         </CardContent>
     </Card>
   )
