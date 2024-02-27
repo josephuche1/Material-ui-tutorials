@@ -1,9 +1,9 @@
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import RefreshIcon from '@mui/icons-material/Refresh';
-import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import CommonButton from '../CommonButton/CommonButton';
+import Input from '@mui/material/Input';
 
 interface ISearchBarProps {
     placeholder: string;
@@ -17,11 +17,11 @@ const SearchBar: React.FC<ISearchBarProps> = (props) => {
   return (
     <Box sx={props.headerStyles}>
         <SearchIcon />
-        <TextField
+        <Input
                 placeholder={props.placeholder}
                 onChange={props.onChange}
-                variant="standard"
                 sx={props.TextFieldStyles}
+                disableUnderline
             />
         <CommonButton
             color="primary"
