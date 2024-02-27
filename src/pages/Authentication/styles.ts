@@ -14,7 +14,7 @@ export const CardStyles = {
        width: "76%",
     },
     bodyStyles: {
-     marginTop:"20px",
+     marginTop:"50px",
      paddingBottom:"20px", 
    },
    cardChildrenContainer: {

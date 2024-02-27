@@ -4,6 +4,7 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 import Box from '@mui/material/Box';
 import CommonButton from '../CommonButton/CommonButton';
 import Input from '@mui/material/Input';
+import Tooltip from '@mui/material/Tooltip';
 
 interface ISearchBarProps {
     placeholder: string;
@@ -30,7 +31,9 @@ const SearchBar: React.FC<ISearchBarProps> = (props) => {
          > 
             Add User
         </CommonButton>
-        <RefreshIcon />
+        <Tooltip title="Refresh">
+          <RefreshIcon />
+        </Tooltip>
     </Box>
   )
 }

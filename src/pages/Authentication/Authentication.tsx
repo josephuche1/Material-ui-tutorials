@@ -21,6 +21,14 @@ const Authentication:React.FC = () => {
     )
   }
 
+  const getContent = () => {
+    return (
+      <Typography>
+        No users for this project yet
+      </Typography>
+    )
+  }
+
   return (
     <Grid item xs={8} sx={{marginLeft:"320px"}}>
       <BasicCard 
@@ -28,9 +36,7 @@ const Authentication:React.FC = () => {
         sx={CardStyles.bodyStyles}
         childrenStyles={CardStyles.cardChildrenContainer}
       >
-         <Typography>
-            No users for this project yet
-         </Typography>
+         {getContent()}
       </BasicCard>
     </Grid>
   )
