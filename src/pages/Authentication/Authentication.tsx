@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import BasicCard from '../../components/common/BasicCard/BasicCard';
 import SearchBar from '../../components/common/SearchBar/SearchBar';
 import {CardStyles} from './styles';
+import Typography  from '@mui/material/Typography';
 
 const Authentication:React.FC = () => {
 
@@ -12,7 +13,7 @@ const Authentication:React.FC = () => {
     }
     return (
       <SearchBar 
-        placeholder= "Search by email, phone number or user ID"
+        placeholder= "Search by email, phone number or user UID"
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e.target.value)}
         headerStyles={CardStyles.headerStyles}
         TextFieldStyles={CardStyles.textField}
@@ -25,7 +26,12 @@ const Authentication:React.FC = () => {
       <BasicCard 
         header={getHeader}
         sx={CardStyles.bodyStyles}
-      />
+        childrenStyles={CardStyles.cardChildrenContainer}
+      >
+         <Typography>
+            No users for this project yet
+         </Typography>
+      </BasicCard>
     </Grid>
   )
 }

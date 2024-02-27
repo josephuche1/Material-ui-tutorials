@@ -16,5 +16,14 @@ export const CardStyles = {
     bodyStyles: {
      marginTop:"20px",
      paddingBottom:"20px", 
+   },
+   cardChildrenContainer: {
+      color: "rgba(0, 0, 0, 0.6)",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100%",
+      marginTop: "20px",
    }
+   
 }
