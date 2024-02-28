@@ -1,8 +1,10 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import Input from '@mui/material/Input';
+import { modalStyles } from './styles';
+import CommonButton from '../CommonButton/CommonButton';
 
 type TBasicModalProps = {
   open: boolean
@@ -10,27 +12,36 @@ type TBasicModalProps = {
 }
 
 const BasicModal:React.FC<TBasicModalProps> = (props) => {
-    const style = {
-        position: 'absolute' as 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 400,
-        bgcolor: 'background.paper',
-        border: '2px solid #000',
-        boxShadow: 24,
-        p: 4,
-      };
+
       
+  function validate(): void {
+    throw new Error('Function not implemented.');
+  }
+
   return (
     <Modal open={props.open} onClose={props.onClose}>
-        <Box sx={style}>
+        <Box sx={modalStyles.modalContainer}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+            New User
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            Fill out the form to add a new user
           </Typography>
+          <Box sx={modalStyles.form.formContainer}>
+            <Input placeholder="Name" sx={modalStyles.form.inputFields} type="text" disableUnderline/>
+            <Input placeholder="Email" sx={modalStyles.form.inputFields} type="text" disableUnderline/>
+            <Input placeholder="Phone Number" sx={modalStyles.form.inputFields} type="text" disableUnderline/>
+            <Box sx={modalStyles.form.buttonContainer}>
+              <CommonButton
+                variant="contained"
+                color="primary"
+                onClick={validate}
+              >
+                Submit
+              </CommonButton>
+              <CommonButton onClick={props.onClose}> Cancel </CommonButton>
+            </Box>
+          </Box>
         </Box>
     </Modal>
   )
