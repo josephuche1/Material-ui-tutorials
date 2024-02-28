@@ -8,6 +8,7 @@ interface ICommonButtonProps {
     variant?: "text" | "outlined" | "contained",
     size?: "small" | "medium" | "large",
     sx?: object
+    onClick?: () => void
 }
 
 const CommonButton: React.FC<ICommonButtonProps> = (props) => {
@@ -19,6 +20,7 @@ const CommonButton: React.FC<ICommonButtonProps> = (props) => {
         variant={props.variant}
         size={props.size}
         sx={props.sx}
+        onClick={props.onClick}
     >
       {props.children}
     </Button>

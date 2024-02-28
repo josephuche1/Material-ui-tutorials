@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Grid from '@mui/material/Grid';
 import BasicCard from '../../components/common/BasicCard/BasicCard';
 import SearchBar from '../../components/common/SearchBar/SearchBar';
 import {CardStyles} from './styles';
 import Typography  from '@mui/material/Typography';
+import BasicModal from '../../components/common/BasicModal/BasicModal';
+
 
 const Authentication:React.FC = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = (): void => {
+    if (open === false) {
+      setOpen(true)
+    } else {
+      setOpen(false)
+    }
+  }
 
   const getHeader = () => {
     const handleChange = (value: string) => {
@@ -17,6 +28,7 @@ const Authentication:React.FC = () => {
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e.target.value)}
         headerStyles={CardStyles.headerStyles}
         TextFieldStyles={CardStyles.textField}
+        buttonOnClick={handleOpen}
       />
     )
   }
@@ -29,6 +41,8 @@ const Authentication:React.FC = () => {
     )
   }
 
+
+
   return (
     <Grid item xs={8} sx={{marginLeft:"320px"}}>
       <BasicCard 
@@ -38,6 +52,7 @@ const Authentication:React.FC = () => {
       >
          {getContent()}
       </BasicCard>
+      <BasicModal open={open} onClose={handleOpen}/>
     </Grid>
   )
 }

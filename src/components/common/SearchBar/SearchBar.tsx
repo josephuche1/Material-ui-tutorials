@@ -11,6 +11,7 @@ interface ISearchBarProps {
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     headerStyles?: object;
     TextFieldStyles: object;
+    buttonOnClick?: () => void;
 }
 
 
@@ -28,6 +29,7 @@ const SearchBar: React.FC<ISearchBarProps> = (props) => {
             color="primary"
             variant="contained"
             size= "small"
+            onClick={props.buttonOnClick}
          > 
             Add User
         </CommonButton>
