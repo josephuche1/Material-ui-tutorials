@@ -16,15 +16,14 @@ export const modalStyles = {
       },
       inputFields: {
         width: "100%",
-        marginBottom: "20px",
-        border: "1px solid #000",
-        borderRadius: "5px",
-        padding: "10px"
+        marginTop: "10px",
+        
       }, 
       buttonContainer: {
         display: "flex",
         justifyContent: "flex-end",
         gap: "10px",
+        marginTop: "20px"
       }
     }
   };

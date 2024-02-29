@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Input from '@mui/material/Input';
 import { modalStyles } from '../../common/BasicModal/styles';
 import CommonButton from '../../common/CommonButton/CommonButton';
+import TextField from '@mui/material/TextField';
 
 
 
@@ -16,9 +17,28 @@ const NewUserModal:React.FC<TBasicModalProps> = (props) => {
   const getContent = (): React.ReactNode => {
     return (
       <Box sx={modalStyles.form.formContainer}>
-          <Input placeholder="Name" sx={modalStyles.form.inputFields} type="text" disableUnderline/>
-          <Input placeholder="Email" sx={modalStyles.form.inputFields} type="email" disableUnderline/>
-          <Input placeholder="Phone Number" sx={modalStyles.form.inputFields} type="text" disableUnderline/>
+          <TextField 
+            placeholder="Name" 
+            sx={modalStyles.form.inputFields} 
+            type="text" 
+            label="Name"
+            required
+            error
+            helperText="Name is required"
+          />
+          <TextField 
+           placeholder="Email" 
+           sx={modalStyles.form.inputFields} 
+           type="email"
+           label="Email"
+           required
+          />
+          <TextField 
+            placeholder="Phone Number" 
+            sx={modalStyles.form.inputFields} 
+            type="tel"
+            label="Phone Number" 
+          />
           <Box sx={modalStyles.form.buttonContainer}>
             <CommonButton
               variant="contained"
@@ -32,7 +52,7 @@ const NewUserModal:React.FC<TBasicModalProps> = (props) => {
       </Box>
     );
   }
-  
+
   return (
     <BasicModal
       open={props.open}
