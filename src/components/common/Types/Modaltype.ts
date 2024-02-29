@@ -3,4 +3,5 @@ export type TBasicModalProps = {
     onClose: () => void
     title: string
     subtitle: string
+    content?: React.ReactNode
   }
