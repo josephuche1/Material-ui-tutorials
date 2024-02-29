@@ -4,7 +4,7 @@ import BasicCard from '../../components/common/BasicCard/BasicCard';
 import SearchBar from '../../components/common/SearchBar/SearchBar';
 import {CardStyles} from './styles';
 import Typography  from '@mui/material/Typography';
-import BasicModal from '../../components/common/BasicModal/BasicModal';
+import NewUserModal from '../../components/Modals/NewUserModal/NewUserModal';
 
 
 const Authentication:React.FC = () => {
@@ -52,7 +52,12 @@ const Authentication:React.FC = () => {
       >
          {getContent()}
       </BasicCard>
-      <BasicModal open={open} onClose={handleOpen}/>
+      <NewUserModal 
+        open={open}
+        onClose={handleOpen}
+        title="New User"
+        subtitle='Please fill in the details of the new user'
+      />
     </Grid>
   )
 }

@@ -5,11 +5,9 @@ import Modal from '@mui/material/Modal';
 import Input from '@mui/material/Input';
 import { modalStyles } from './styles';
 import CommonButton from '../CommonButton/CommonButton';
+import { TBasicModalProps } from '../Types/Modaltype';
 
-type TBasicModalProps = {
-  open: boolean
-  onClose: () => void
-}
+
 
 const BasicModal:React.FC<TBasicModalProps> = (props) => {
 
@@ -22,10 +20,10 @@ const BasicModal:React.FC<TBasicModalProps> = (props) => {
     <Modal open={props.open} onClose={props.onClose}>
         <Box sx={modalStyles.modalContainer}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            New User
+            {props.title}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Fill out the form to add a new user
+            {props.subtitle}
           </Typography>
           <Box sx={modalStyles.form.formContainer}>
             <Input placeholder="Name" sx={modalStyles.form.inputFields} type="text" disableUnderline/>
