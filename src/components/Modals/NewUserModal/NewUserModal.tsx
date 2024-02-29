@@ -19,6 +19,7 @@ const NewUserModal:React.FC<TBasicModalProps> = (props) => {
      // .matches(phoneRegex, "Phone number is not valid")
  });
 
+
   const {
     register, 
     handleSubmit, 
@@ -26,9 +27,17 @@ const NewUserModal:React.FC<TBasicModalProps> = (props) => {
   } = useForm({
     resolver: yupResolver(validationSchema)
   });
-  const validate = (): void => {
-    console.log('Validating')
+
+  
+ const onSubmit = (data: object): void => {
+  addUser(data);
+ }
+
+  const addUser = (data: object): void => {
+    console.log(data);
   }
+
+
 
   const getContent = (): React.ReactNode => {
     return (
@@ -39,8 +48,9 @@ const NewUserModal:React.FC<TBasicModalProps> = (props) => {
             type="text" 
             label="Name"
             required
-            error
-            helperText="Name is required"
+            {...register('name')} // register the input
+            error={errors.name ? true : false} // apply an error state if there is an error
+            helperText={errors.name?.message} // display the error message
           />
           <TextField 
            placeholder="Email" 
@@ -48,18 +58,24 @@ const NewUserModal:React.FC<TBasicModalProps> = (props) => {
            type="email"
            label="Email"
            required
+           {...register('email')} // register the input
+           error={errors.email ? true : false} // apply an error state if there is an error
+           helperText={errors.email?.message} // display the error message
           />
           <TextField 
             placeholder="Phone Number" 
             sx={modalStyles.form.inputFields} 
             type="tel"
             label="Phone Number" 
+            {...register('phone')} // register the input
+            error={errors.phone ? true : false} // apply an error state if there is an error
+            helperText={errors.phone?.message} // display the error message
           />
           <Box sx={modalStyles.form.buttonContainer}>
             <CommonButton
               variant="contained"
               color="primary"
-              onClick={validate}
+              onClick={onSubmit}
             >
               Submit
             </CommonButton>

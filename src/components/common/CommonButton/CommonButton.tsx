@@ -8,7 +8,7 @@ interface ICommonButtonProps {
     variant?: "text" | "outlined" | "contained",
     size?: "small" | "medium" | "large",
     sx?: object
-    onClick?: () => void
+    onClick?: (data?: any) => void
 }
 
 const CommonButton: React.FC<ICommonButtonProps> = (props) => {
